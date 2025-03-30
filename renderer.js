@@ -6,3 +6,4 @@ const func = async () => {
   }
   
   func()
+

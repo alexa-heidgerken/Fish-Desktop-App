@@ -5,33 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fishy</title>
     <link rel="stylesheet" href="style.css"> <!-- Link to the external CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
 
 </head>
 <body>
     
     <button class="feeding-button" onclick="feedingTime()"> 
-        <img src="IMG_0107.PNG" alt="feeding button">
+        <img src="fishfood.PNG" alt="press to feed">
     </button>
 
-    <div class="screen-box"></div>
+    <div class="screen-box">
+        <div id="fish-animate"></div>
+    </div>
+    <div class="shadow-screen"></div>
+    
+    <div class="lives">
+        <img src="heart.PNG" alt="heart" class="heart" />
+        <img src="heart.PNG" alt="heart" class="heart" />
+        <img src="heart.PNG" alt="heart" class="heart" />
+    </div>
 
-
+    <div class="timer-display">00:00</div>
 
     <script src="renderer.js"></script>
-    <script>
-        let isIdle = true;
-        let switching = false;
-        let lastFed = 0;
-
-        function startSwitching() {
-            if (!switching){
-                switching = true;
-            }
-        }
-
-
-
-    </script>
+    <script src="script.js"></script>
 
 
 
