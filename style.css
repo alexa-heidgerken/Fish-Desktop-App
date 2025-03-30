@@ -1,0 +1,153 @@
+@keyframes deadFishAnimation {
+    0% { background-image: url('Images/deadfish/IMG_0128.PNG');}
+    16% { background-image: url('Images/deadfish/IMG_0129.PNG'); }
+    30% { background-image: url('Images/deadfish/IMG_0130.PNG'); }
+    45% { background-image: url('Images/deadfish/IMG_0143.PNG'); }
+    60% { background-image: url('Images/deadfish/IMG_0147.PNG'); }
+    85% { background-image: url('Images/deadfish/IMG_0148.PNG'); }
+    90% { background-image: url('Images/deadfish/IMG_0149.PNG'); }
+}
+
+@keyframes feedingFishAnimation {
+    0% { background-image: url('Images/foodfish/IMG_0108.PNG');}
+    6% { background-image: url('Images/foodfish/IMG_0109.PNG'); }
+    12% { background-image: url('Images/foodfish/IMG_0110.PNG'); }
+    18% { background-image: url('Images/foodfish/IMG_0111.PNG'); }
+    24% { background-image: url('Images/foodfish/IMG_0112.PNG'); }
+    30% { background-image: url('Images/foodfish/IMG_0113.PNG'); }
+    36% { background-image: url('Images/foodfish/IMG_0114.PNG'); }
+    42% { background-image: url('Images/foodfish/IMG_0115.PNG'); }
+    48% { background-image: url('Images/foodfish/IMG_0116.PNG'); }
+    54% { background-image: url('Images/foodfish/IMG_0117.PNG'); }
+    60% { background-image: url('Images/foodfish/IMG_0118.PNG'); }
+    66% { background-image: url('Images/foodfish/IMG_0119.PNG'); }
+    72% { background-image: url('Images/foodfish/IMG_0120.PNG'); }
+    78% { background-image: url('Images/foodfish/IMG_0121.PNG'); }
+    84% { background-image: url('Images/foodfish/IMG_0122.PNG'); }
+    92% { background-image: url('Images/foodfish/IMG_0123.PNG'); }
+    96% { background-image: url('Images/foodfish/IMG_0124.PNG'); }
+    100% { background-image: url('Images/foodfish/IMG_0125.PNG'); }
+}
+
+
+@keyframes idleFishAnimation {
+    0% { background-image: url('Images/idlefish/IMG_0127.PNG');}
+    6% { background-image: url('Images/idlefish/IMG_0128.PNG'); }
+    11% { background-image: url('Images/idlefish/IMG_0129.PNG'); }
+    18% { background-image: url('Images/idlefish/IMG_0130.PNG'); }
+    24% { background-image: url('Images/idlefish/IMG_0116.PNG'); }
+    30% { background-image: url('Images/idlefish/IMG_0117.PNG'); }
+    36% { background-image: url('Images/idlefish/IMG_0118.PNG'); }
+    41% { background-image: url('Images/idlefish/IMG_0134.PNG'); }
+    47% { background-image: url('Images/idlefish/IMG_0119.PNG'); }
+    53% { background-image: url('Images/idlefish/IMG_0120.PNG'); }
+    59% { background-image: url('Images/idlefish/IMG_0121.PNG'); }
+    65% { background-image: url('Images/idlefish/IMG_0122.PNG'); }
+    70% { background-image: url('Images/idlefish/IMG_0123.PNG'); }
+    75% { background-image: url('Images/idlefish/IMG_0124.PNG'); }
+    85% { background-image: url('Images/idlefish/IMG_0125.PNG'); }
+    90% { background-image: url('Images/idlefish/IMG_0126.PNG'); }
+    95% { background-image: url('Images/idlefish/IMG_0127.PNG'); }
+
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #d0ffdc;
+    height: 100vh; /* Ensure the body takes up the full height of the viewport */
+    background-size: cover; /* Ensure the background image covers the whole screen */
+    background-position: center; /* Center the background image */
+    transition: background-image 1s ease-in-out; /* Smooth transition for background change */
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    position: relative; /* Positioning context for child elements */
+}
+
+/*box for the screen to go in */
+.screen-box {
+    width: 75%;
+    height: 75%;
+    background-color: #5fe4ff;
+    border-radius: 10%;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%); /*centering using transform*/
+
+}
+
+/*basically a duplicate of the screenbox but placed after in the html to create a shadow effect*/
+.shadow-screen {
+    width: 75%;
+    height: 75%;
+    background-color: transparent;
+    border-radius: 10%;
+    border: 2px, solid, #228b22;
+    box-shadow: inset 0 4px 10px rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    overflow: hidden;
+    transform: translate(-50%, -50%); /*centering using transform*/
+
+}
+
+#fish-animate {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    animation: idleFishAnimation 20s steps(1) infinite;
+    background-repeat: no-repeat;
+    border-radius: 10%;
+}
+
+/* button with foodfish image*/
+.feeding-button {
+    position: absolute;
+    top: 10px;
+    right: 12%;
+    border: none;
+    background: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+.feeding-button img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: solid;
+    border-width: 1%;
+    border-color: blue;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.feeding-button img:hover{
+    transform: scale(1.1);
+    transition: transform 0.2 ease;
+    border-color: orangered
+}
+
+/*holds images*/
+.lives {
+    position: absolute;
+    top: 45px;
+    display: flex;
+    left: 12%;
+    gap: 5px;
+}
+.heart {
+    width:25px;
+    height: 25px;
+}
+
+.timer-display {
+    font-size: 30px;
+    font-weight: bold;
+    color: #228b22;
+    top: 10px;
+    left: 12%;
+    position: absolute;
+}
